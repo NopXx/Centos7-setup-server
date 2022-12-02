@@ -381,3 +381,9 @@ systemctl enable vsftpd
 systemctl enable mariadb
 systemctl enable network
 ```
+
+## `End`
+
+```javascript
+reboot
+```
