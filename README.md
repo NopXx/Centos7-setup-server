@@ -140,6 +140,7 @@ $TTL 1D
                                         1W      ; expire
                                         3H )    ; minimum
 @       IN NS      it.ltc.com.
+@       IN A       192.168.1.2
 it      IN A       192.168.1.2
 
 -------------------------
