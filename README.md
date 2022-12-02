@@ -64,7 +64,7 @@ save & exit
 ```
 
 ```javascript
-chcon -Rv -t public_content_t /var/www
+chcon -Rv -t public_content_rw_t /var/www
 chown webmaster -R /var/www
 chmod -R 777 /var/www
 setsebool -P httpd_anon_write 1
