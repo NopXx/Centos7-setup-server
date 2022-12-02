@@ -30,7 +30,7 @@ yum --disablerepo=\* --enablerepo=c7-media install vsftpd -y
 
 ```
 ## `Setup WebServer`
-```javascript
+```bash
 nano /etc/httpd/conf/httpd.conf
 ---------------------------------
 #Add
