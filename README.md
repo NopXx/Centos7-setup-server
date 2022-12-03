@@ -1,6 +1,6 @@
 
 # Setup CentOS 7 Server 🐧
-- [Setup IP by nmtui](#setup-ip)
+- [Setup IP by nmtui](#setup-ip) 🪪
 - [Web Server](#setup-webserver) 🌐
 - [DNS Server](#setup-dns) 📗
 - [DHCP Server](#setup-dhcp) 💽
