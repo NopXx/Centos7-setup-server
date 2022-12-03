@@ -17,10 +17,12 @@
 ```javascript
 mkdir /media/cdrom
 fdisk -l
+```
+
 |Device      |Boot  |
 |------------|------|
 |  /dev/sdb1 |  *   |
-
+```javascript
 mount /dev/sdb1 /media/cdrom
 ```
 ### `Install Package`
