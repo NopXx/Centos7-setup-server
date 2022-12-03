@@ -1,5 +1,6 @@
 
 # Setup CentOS 7 Server 🐧
+- [Setup IP by nmtui](#setup-ip)
 - [Web Server](#setup-webserver) 🌐
 - [DNS Server](#setup-dns) 📗
 - [DHCP Server](#setup-dhcp) 💽
@@ -30,6 +31,61 @@ yum --disablerepo=\* --enablerepo=c7-media install dhcp -y
 yum --disablerepo=\* --enablerepo=c7-media install mariadb-server -y
 yum --disablerepo=\* --enablerepo=c7-media install php-mysql -y
 yum --disablerepo=\* --enablerepo=c7-media install vsftpd -y
+
+```
+## `Setup IP`
+```javascript
+nmtui
+----------------
+Edit a connection -> enp2s0
+-------
+IPv4 CONFIGURATION <Manual>
+    Addresses = 192.168.1.2/24
+    Gateway = 192.168.1.1
+    DNS servers = 192.168.1.2
+
+[X] Automatically connect
+
+<OK>
+```
+
+```javascript
+<Add>
+VLAN
+<Create>
+
+Profile name = VLAN10
+Device = enp2s0.10
+
+IPv4 CONFIGURATION <Manual>
+    Addresses = 192.168.10.2/24
+    Gateway = 192.168.10.1
+    DNS servers = 192.168.1.2
+
+<OK>
+```
+
+```javascript
+<Add>
+VLAN
+<Create>
+
+Profile name = VLAN20
+Device = enp2s0.20
+
+IPv4 CONFIGURATION <Manual>
+    Addresses = 192.168.20.2/24
+    Gateway = 192.168.20.1
+    DNS servers = 192.168.1.2
+
+<OK>
+```
+
+```javascript
+<Back>
+Quit
+<OK>
+```
 
 ```
 ## `Setup WebServer`
