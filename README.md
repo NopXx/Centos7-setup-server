@@ -87,7 +87,6 @@ Quit
 <OK>
 ```
 
-```
 ## `Setup WebServer`
 ```javascript
 nano /etc/httpd/conf/httpd.conf
