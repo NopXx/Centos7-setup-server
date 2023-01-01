@@ -7,7 +7,6 @@
 - [FTP Server](#setup-ftp) 📁
 - [MariaDB](#setup-mariadb) 🐬
 - [Firewall](#setup-firewall) 🧱
-- [Route](#setup-route) 🛣
 - [Service](#setup-service) 🧰
 
 # Get Started 🚀  
@@ -47,38 +46,6 @@ IPv4 CONFIGURATION <Manual>
     DNS servers = 192.168.1.2
 
 [X] Automatically connect
-
-<OK>
-```
-
-```javascript
-<Add>
-VLAN
-<Create>
-
-Profile name = VLAN10
-Device = enp2s0.10
-
-IPv4 CONFIGURATION <Manual>
-    Addresses = 192.168.10.2/24
-    Gateway = 192.168.10.1
-    DNS servers = 192.168.1.2
-
-<OK>
-```
-
-```javascript
-<Add>
-VLAN
-<Create>
-
-Profile name = VLAN20
-Device = enp2s0.20
-
-IPv4 CONFIGURATION <Manual>
-    Addresses = 192.168.20.2/24
-    Gateway = 192.168.20.1
-    DNS servers = 192.168.1.2
 
 <OK>
 ```
@@ -222,8 +189,7 @@ save & exit
 ```
 
 ```javascript
-chown named: for.zone
-chown named: re.zone
+chown named: for.zone re.zone
 ```
 
 ```javascript
@@ -316,8 +282,6 @@ nano /etc/sysconfig/dhcpd
 ---------------
 #Add
 DHCPDAGS=enp2s0
-DHCPDAGS=enp2s0.10
-DHCPDAGS=enp2s0.20
 ------------
 save & exit
 ```
@@ -407,27 +371,6 @@ firewall-cmd --permanent --add-service=dhcp
 firewall-cmd --permanent --add-port=21/tcp
 firewall-cmd --permanent --add-port=3306/tcp
 firewall-cmd --reload
-```
-
-## `Setup Route`
-
-```javascript
-nano /etc/init.d/network
---------------------------
-#ไปที่บันทัดสุดท้าย
-
-esac
-
-exit $rc
-
-esac
-ip r d 192.168.1.0/24
-ip r d 192.168.10.0/24
-ip r d 192.168.20.0/24
-
-exit $rc
--------------------------
-save & edit
 ```
 
 ## `Setup Service`
